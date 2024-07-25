@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url(./fondogame.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.JUEGO{
+    font-family:cursive;
+    color: rgb(255, 15, 15);
+}
+.container {
+    max-width: 400px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* 4 columnas */
+    gap: 5px; /* Espacio entre las cartas */
+    margin: 20px auto;
+    border: 5px solid #333; /* Borde del tablero */
+    background-color: #fff; /* Fondo del tablero */
+    padding: 10px; /* Espaciado interno del tablero */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra del tablero */
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #72f04c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f27575; /* Color de fondo de las cartas */
+    cursor: pointer;
+    transition: transform 0.2s; /* Efecto de transformación */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de hover */
+}
+
+.flipped img {
+    display: block;
+}
+
+.card img {
+    display: none; /* Ocultar imágenes por defecto */
+    width: 100%; /* Asegurarse de que la imagen ocupe el 100% */
+    height: auto; /* Mantener la proporción de la imagen */
+}
+
+#start-game {
+  
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #32e632; /* Color verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#start-game:hover {
+    background-color: #218838; /* Color verde más oscuro al pasar el mouse */
+}
+#exit-button {
+         
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #dc3545; /* Color rojo */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#exit-button:hover {
+    background-color: #c82333; /* Color rojo más oscuro al pasar el mouse */
+}
+
+
+#score {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.message {
+    color: red;
+    margin-top: 10px;
+}

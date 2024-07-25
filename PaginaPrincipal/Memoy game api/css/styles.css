@@ -1,0 +1,194 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Bangers', cursive;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+}
+
+.video-container {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.video-container video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 50%;
+	object-fit: cover;
+	pointer-events: none;
+}
+
+.video-container .contenido {
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	width: 50vw;
+	z-index: 1;
+}
+
+.contenido img {
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.contenido a {
+	text-decoration: none;
+	color: #383838;
+}
+
+.button {
+	border-radius: 35px;
+	width: 200px;
+	padding: 20px;
+	margin: 0 auto;
+	cursor: pointer;
+	overflow: hidden;
+	font-weight: 600;
+	text-align: center;
+	letter-spacing: 5px;
+	font-family: sans-serif;
+	background-color: #ffff00;
+}
+
+.button:hover {
+	color: #000;
+}
+
+#cargando {
+	width: 150px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	color: white;
+	border-radius: 5px;
+	background-color: #00000080;
+}
+
+#cargando img {
+	height: 70%;
+}
+
+.rotate {
+	animation: rotation 4s infinite linear;
+}
+
+#game {
+	width: 500px;
+	height: 500px;
+	display: none;
+	flex-wrap: wrap;
+	perspective: 600px;
+	justify-content: space-around;
+}
+
+.info-game {
+	position: absolute;
+	bottom: 40px;
+	width: 500px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 5px;
+	background-color: #ffffff80;
+}
+
+.info-game button {
+	width: 20%;
+	height: 70%;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: 0.2s;
+	border-radius: 5px;
+	background-color: #ffff00;
+}
+
+.info-game button:hover {
+	font-size: 1em;
+}
+
+.tarjeta {
+	width: 90px;
+	height: 90px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	margin: 5px 5px;
+	user-select: none;
+	position: relative;
+	border-radius: 25px;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+	transform-origin: center right;
+}
+
+.rotar {
+	transform: translateX(-100%) rotateY(-180deg);
+}
+
+.front, .back {
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-size: 35px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.vueltaFront {
+	background-image: url(../img/background.jpg);
+	background-size: cover;
+	border-radius: 15px;
+}
+
+.vueltaBack {
+	border-radius: 15px;
+	background-size: cover;
+	transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {
+	.video-container .contenido {width: 80vw;}
+	.tarjeta {height: 60px; width: 60px;}
+	#game {height: 400px; width: 300px;}
+	.info-game button {width: 35%;}
+	.info-game {width: 300px;}
+	.button {width: 150px;}
+}
+
+@media screen and (max-width: 480px) {}
+
+@media screen and (max-width: 320px) {
+	.tarjeta {height: 50px; width: 50px;}
+	#game {height: 380px; width: 280px;}
+	.info-game {width: 280px;}
+}
+
+@keyframes rotation {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(359deg);}
+}
